@@ -21,5 +21,13 @@ Tests are usually ran not only locally, but also as a part of continuous integra
 I aim to also find out if SQL Server LocalDB can be installed into Azure Pipelines so that this
 solution could work in both a developer's local environment as well as the remote build scenario.
 
-- [ ] Find out if SQL Server LocalDB can be installed into an Azure Pipeline without agent image
-- [ ] Find out how to provide it as a baseline tool in the agent image to avoid installing per run
+- [ ] Verify if LocalDB is present on the Microsoft hosted agents which are in GA
+
+It should be: https://github.com/Microsoft/azure-pipelines-image-generation/issues/34
+
+- [ ] Find out if SQL Server LocalDB can be installed into an Azure Pipeline if not present
+
+If it is not present in the GA Microsoft hosted pipelines, it looks like the only option would be to
+use a self-hosted agent with LocalDB installed in its image. But maybe there are other options.
+
+- [ ] Find out how to provide it as a baseline in the image to avoid installing per run
